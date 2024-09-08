@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/ProjectsC/Time/cmake-build-debug",
-		"source" : "D:/ProjectsC/Time"
+		"build" : "D:/Github/MCBivis/Time/cmake-build-debug",
+		"source" : "D:/Github/MCBivis/Time"
 	},
 	"version" : 
 	{

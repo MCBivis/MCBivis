@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/ProjectsC/Time/cmake-build-debug"
+			"value" : "d:/Github/MCBivis/Time/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/ProjectsC/Time/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "D:/Github/MCBivis/Time/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/ProjectsC/Time"
+			"value" : "D:/Github/MCBivis/Time"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/ProjectsC/Time/cmake-build-debug"
+			"value" : "D:/Github/MCBivis/Time/cmake-build-debug"
 		},
 		{
 			"name" : "Time_IS_TOP_LEVEL",
@@ -1159,7 +1159,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/ProjectsC/Time"
+			"value" : "D:/Github/MCBivis/Time"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
