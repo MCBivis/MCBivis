@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/3_Setuid.dir/main.c.o -o 3_Setuid 

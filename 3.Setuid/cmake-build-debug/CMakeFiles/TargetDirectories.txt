@@ -1,0 +1,3 @@
+/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles/3_Setuid.dir
+/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles/rebuild_cache.dir
