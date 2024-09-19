@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/9_2processes.dir/main.c.o -o 9_2processes 

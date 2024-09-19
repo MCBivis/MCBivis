@@ -1,0 +1,3 @@
+/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles/9_2processes.dir
+/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles/rebuild_cache.dir
