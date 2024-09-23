@@ -1,0 +1,3 @@
+/mnt/d/Github/MCBivis/11.execvpe/cmake-build-debug/CMakeFiles/11_execvpe.dir
+/mnt/d/Github/MCBivis/11.execvpe/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Github/MCBivis/11.execvpe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
