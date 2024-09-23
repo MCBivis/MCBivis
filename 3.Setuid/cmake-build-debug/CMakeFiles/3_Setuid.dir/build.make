@@ -69,28 +69,28 @@ include CMakeFiles/3_Setuid.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/3_Setuid.dir/flags.make
 
-CMakeFiles/3_Setuid.dir/main.c.o: CMakeFiles/3_Setuid.dir/flags.make
-CMakeFiles/3_Setuid.dir/main.c.o: ../main.c
-CMakeFiles/3_Setuid.dir/main.c.o: CMakeFiles/3_Setuid.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/3_Setuid.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3_Setuid.dir/main.c.o -MF CMakeFiles/3_Setuid.dir/main.c.o.d -o CMakeFiles/3_Setuid.dir/main.c.o -c /mnt/d/Github/MCBivis/3.Setuid/main.c
+CMakeFiles/3_Setuid.dir/Setuid.c.o: CMakeFiles/3_Setuid.dir/flags.make
+CMakeFiles/3_Setuid.dir/Setuid.c.o: ../Setuid.c
+CMakeFiles/3_Setuid.dir/Setuid.c.o: CMakeFiles/3_Setuid.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/3_Setuid.dir/Setuid.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/3_Setuid.dir/Setuid.c.o -MF CMakeFiles/3_Setuid.dir/Setuid.c.o.d -o CMakeFiles/3_Setuid.dir/Setuid.c.o -c /mnt/d/Github/MCBivis/3.Setuid/Setuid.c
 
-CMakeFiles/3_Setuid.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/3_Setuid.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/3.Setuid/main.c > CMakeFiles/3_Setuid.dir/main.c.i
+CMakeFiles/3_Setuid.dir/Setuid.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/3_Setuid.dir/Setuid.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/3.Setuid/Setuid.c > CMakeFiles/3_Setuid.dir/Setuid.c.i
 
-CMakeFiles/3_Setuid.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/3_Setuid.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/3.Setuid/main.c -o CMakeFiles/3_Setuid.dir/main.c.s
+CMakeFiles/3_Setuid.dir/Setuid.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/3_Setuid.dir/Setuid.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/3.Setuid/Setuid.c -o CMakeFiles/3_Setuid.dir/Setuid.c.s
 
 # Object files for target 3_Setuid
 3_Setuid_OBJECTS = \
-"CMakeFiles/3_Setuid.dir/main.c.o"
+"CMakeFiles/3_Setuid.dir/Setuid.c.o"
 
 # External object files for target 3_Setuid
 3_Setuid_EXTERNAL_OBJECTS =
 
-3_Setuid: CMakeFiles/3_Setuid.dir/main.c.o
+3_Setuid: CMakeFiles/3_Setuid.dir/Setuid.c.o
 3_Setuid: CMakeFiles/3_Setuid.dir/build.make
 3_Setuid: CMakeFiles/3_Setuid.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Github/MCBivis/3.Setuid/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable 3_Setuid"

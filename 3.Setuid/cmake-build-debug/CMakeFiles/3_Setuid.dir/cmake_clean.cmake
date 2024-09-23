@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "3_Setuid"
   "3_Setuid.pdb"
-  "CMakeFiles/3_Setuid.dir/main.c.o"
-  "CMakeFiles/3_Setuid.dir/main.c.o.d"
+  "CMakeFiles/3_Setuid.dir/Setuid.c.o"
+  "CMakeFiles/3_Setuid.dir/Setuid.c.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

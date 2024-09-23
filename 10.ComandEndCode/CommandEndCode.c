@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
     // Проверяем, что передана хотя бы одна команда
     if (argc < 2) {
-        perror( "Error: there have to be at least 1 argument\n");
+        printf( "There have to be at least 1 argument\n");
         return 1;
     }
 
@@ -15,14 +15,14 @@ int main(int argc, char *argv[]) {
 
     if (pid < 0) {
         // Ошибка создания процесса
-        perror("Error: failed to fork");
+        perror("Failed to fork");
         return 1;
     } else if (pid == 0) {
         // Дочерний процесс: выполняем команду argv[1] с  аргументами &argv[1]
         execvp(argv[1], &argv[1]);
 
         // Если execvp не выполнится, выводим ошибку
-        perror("Error: failed to execute execvp");
+        perror("Failed to execute execvp");
         return 1;
     } else {
         // Родительский процесс: ожидаем завершения дочернего процесса
@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 
         if (wait_result == -1) {
             // Ошибка при ожидании дочернего процесса
-            perror("Error: failed to wait for the child process");
+            perror("Failed to wait for the child process");
             return 1;
         }
 

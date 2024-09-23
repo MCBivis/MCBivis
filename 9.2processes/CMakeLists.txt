@@ -3,4 +3,4 @@ project(9_2processes C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(9_2processes main.c)
+add_executable(9_2processes 2processes.c)

@@ -9,14 +9,14 @@ int main() {
 
     if (pid < 0) {
         // Ошибка создания процесса
-        perror("Error: failed to fork");
+        perror("Failed to fork");
         return 1;
     } else if (pid == 0) {
         // Дочерний процесс: выполняем команду cat для вывода содержимого файла
         execlp("cat", "cat", "voina_i_mir.txt", NULL);
 
         // Если execlp не выполнится, выводим ошибку
-        perror("Error: failed to execute execlp");
+        perror("Failed to execute execlp");
         return 1;
     } else {
         // Родительский процесс: ожидаем завершения дочернего процесса
@@ -25,7 +25,7 @@ int main() {
 
         if (wait_result == -1) {
             // Ошибка при ожидании дочернего процесса
-            perror("Error: failed to wait for the child process");
+            perror("Failed to wait for the child process");
             return 1;
         }
 

@@ -129,29 +129,29 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/build
 .PHONY : 9_2processes/fast
 
-main.o: main.c.o
-.PHONY : main.o
+2processes.o: 2processes.c.o
+.PHONY : 2processes.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/main.c.o
-.PHONY : main.c.o
+2processes.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/2processes.c.o
+.PHONY : 2processes.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+2processes.i: 2processes.c.i
+.PHONY : 2processes.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/main.c.i
-.PHONY : main.c.i
+2processes.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/2processes.c.i
+.PHONY : 2processes.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+2processes.s: 2processes.c.s
+.PHONY : 2processes.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/main.c.s
-.PHONY : main.c.s
+2processes.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/9_2processes.dir/build.make CMakeFiles/9_2processes.dir/2processes.c.s
+.PHONY : 2processes.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 9_2processes"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... 2processes.o"
+	@echo "... 2processes.i"
+	@echo "... 2processes.s"
 .PHONY : help
 
 

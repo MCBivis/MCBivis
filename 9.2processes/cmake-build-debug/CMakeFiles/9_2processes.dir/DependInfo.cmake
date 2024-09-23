@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/d/Github/MCBivis/9.2processes/main.c" "CMakeFiles/9_2processes.dir/main.c.o" "gcc" "CMakeFiles/9_2processes.dir/main.c.o.d"
+  "/mnt/d/Github/MCBivis/9.2processes/2processes.c" "CMakeFiles/9_2processes.dir/2processes.c.o" "gcc" "CMakeFiles/9_2processes.dir/2processes.c.o.d"
   )
 
 # Targets to which this target links.

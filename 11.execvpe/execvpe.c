@@ -34,14 +34,14 @@ int main() {
 
     if (pid < 0) {
         // Ошибка создания процесса
-        perror("Error: failed to fork");
+        perror("Failed to fork");
         return 1;
     } else if (pid == 0) {
         // Дочерний процесс: проверяем работоспособность функции
         execvpe("env", args, new_envp);
 
         // Если execvpe не выполнится, выводим ошибку
-        perror("Error: failed to execute execvpe");
+        perror("Failed to execute execvpe");
         return 1;
     } else {
         // Родительский процесс: ожидаем завершения дочернего процесса
@@ -50,7 +50,7 @@ int main() {
 
         if (wait_result == -1) {
             // Ошибка при ожидании дочернего процесса
-            perror("Error: failed to wait for the child process");
+            perror("Failed to wait for the child process");
             return 1;
         }
 

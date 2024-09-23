@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/d/Github/MCBivis/3.Setuid/main.c" "CMakeFiles/3_Setuid.dir/main.c.o" "gcc" "CMakeFiles/3_Setuid.dir/main.c.o.d"
+  "/mnt/d/Github/MCBivis/3.Setuid/Setuid.c" "CMakeFiles/3_Setuid.dir/Setuid.c.o" "gcc" "CMakeFiles/3_Setuid.dir/Setuid.c.o.d"
   )
 
 # Targets to which this target links.

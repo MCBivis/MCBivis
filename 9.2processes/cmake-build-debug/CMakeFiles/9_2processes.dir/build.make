@@ -69,28 +69,28 @@ include CMakeFiles/9_2processes.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/9_2processes.dir/flags.make
 
-CMakeFiles/9_2processes.dir/main.c.o: CMakeFiles/9_2processes.dir/flags.make
-CMakeFiles/9_2processes.dir/main.c.o: ../main.c
-CMakeFiles/9_2processes.dir/main.c.o: CMakeFiles/9_2processes.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/9_2processes.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/9_2processes.dir/main.c.o -MF CMakeFiles/9_2processes.dir/main.c.o.d -o CMakeFiles/9_2processes.dir/main.c.o -c /mnt/d/Github/MCBivis/9.2processes/main.c
+CMakeFiles/9_2processes.dir/2processes.c.o: CMakeFiles/9_2processes.dir/flags.make
+CMakeFiles/9_2processes.dir/2processes.c.o: ../2processes.c
+CMakeFiles/9_2processes.dir/2processes.c.o: CMakeFiles/9_2processes.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/9_2processes.dir/2processes.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/9_2processes.dir/2processes.c.o -MF CMakeFiles/9_2processes.dir/2processes.c.o.d -o CMakeFiles/9_2processes.dir/2processes.c.o -c /mnt/d/Github/MCBivis/9.2processes/2processes.c
 
-CMakeFiles/9_2processes.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/9_2processes.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/9.2processes/main.c > CMakeFiles/9_2processes.dir/main.c.i
+CMakeFiles/9_2processes.dir/2processes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/9_2processes.dir/2processes.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/9.2processes/2processes.c > CMakeFiles/9_2processes.dir/2processes.c.i
 
-CMakeFiles/9_2processes.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/9_2processes.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/9.2processes/main.c -o CMakeFiles/9_2processes.dir/main.c.s
+CMakeFiles/9_2processes.dir/2processes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/9_2processes.dir/2processes.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/9.2processes/2processes.c -o CMakeFiles/9_2processes.dir/2processes.c.s
 
 # Object files for target 9_2processes
 9_2processes_OBJECTS = \
-"CMakeFiles/9_2processes.dir/main.c.o"
+"CMakeFiles/9_2processes.dir/2processes.c.o"
 
 # External object files for target 9_2processes
 9_2processes_EXTERNAL_OBJECTS =
 
-9_2processes: CMakeFiles/9_2processes.dir/main.c.o
+9_2processes: CMakeFiles/9_2processes.dir/2processes.c.o
 9_2processes: CMakeFiles/9_2processes.dir/build.make
 9_2processes: CMakeFiles/9_2processes.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Github/MCBivis/9.2processes/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable 9_2processes"

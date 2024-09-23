@@ -129,29 +129,29 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/build
 .PHONY : 3_Setuid/fast
 
-main.o: main.c.o
-.PHONY : main.o
+Setuid.o: Setuid.c.o
+.PHONY : Setuid.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/main.c.o
-.PHONY : main.c.o
+Setuid.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/Setuid.c.o
+.PHONY : Setuid.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+Setuid.i: Setuid.c.i
+.PHONY : Setuid.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/main.c.i
-.PHONY : main.c.i
+Setuid.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/Setuid.c.i
+.PHONY : Setuid.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+Setuid.s: Setuid.c.s
+.PHONY : Setuid.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/main.c.s
-.PHONY : main.c.s
+Setuid.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3_Setuid.dir/build.make CMakeFiles/3_Setuid.dir/Setuid.c.s
+.PHONY : Setuid.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 3_Setuid"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... Setuid.o"
+	@echo "... Setuid.i"
+	@echo "... Setuid.s"
 .PHONY : help
 
 
