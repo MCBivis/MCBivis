@@ -1,6 +1,6 @@
-CMakeFiles/9_2processes.dir/main.c.o: \
- /mnt/d/Github/MCBivis/9.2processes/main.c /usr/include/stdc-predef.h \
- /usr/include/stdio.h \
+CMakeFiles/9_2processes.dir/2processes.c.o: \
+ /mnt/d/Github/MCBivis/9.2processes/2processes.c \
+ /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
