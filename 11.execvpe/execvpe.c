@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <wait.h>
+#include <paths.h>
 
 extern char **environ;
 
@@ -23,6 +24,8 @@ int execvpe(const char *file, char *const argv[], char *const envp[]) {
 }
 
 int main() {
+    char* path = _PATH_DEFPATH;
+    printf("%s\n",path);
     // Создаем массив аргументов для команды
     char *args[] = {"env", NULL};
 
