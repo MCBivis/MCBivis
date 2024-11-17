@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/30_socket.dir/server.c.o CMakeFiles/30_socket.dir/client.c.o -o 30_socket 
