@@ -1,0 +1,3 @@
+/mnt/d/Github/MCBivis/28_rand/cmake-build-debug/CMakeFiles/28_rand.dir
+/mnt/d/Github/MCBivis/28_rand/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Github/MCBivis/28_rand/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /mnt/d/Github/MCBivis/28_rand -B /mnt/d/Github/MCBivis/28_rand/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/d/Github/MCBivis/28_rand/cmake-build-debug
