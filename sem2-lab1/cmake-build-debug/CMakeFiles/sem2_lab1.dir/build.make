@@ -69,28 +69,28 @@ include CMakeFiles/sem2_lab1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sem2_lab1.dir/flags.make
 
-CMakeFiles/sem2_lab1.dir/main.c.o: CMakeFiles/sem2_lab1.dir/flags.make
-CMakeFiles/sem2_lab1.dir/main.c.o: ../main.c
-CMakeFiles/sem2_lab1.dir/main.c.o: CMakeFiles/sem2_lab1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sem2_lab1.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sem2_lab1.dir/main.c.o -MF CMakeFiles/sem2_lab1.dir/main.c.o.d -o CMakeFiles/sem2_lab1.dir/main.c.o -c /mnt/d/Github/MCBivis/sem2-lab1/main.c
+CMakeFiles/sem2_lab1.dir/thread.c.o: CMakeFiles/sem2_lab1.dir/flags.make
+CMakeFiles/sem2_lab1.dir/thread.c.o: ../thread.c
+CMakeFiles/sem2_lab1.dir/thread.c.o: CMakeFiles/sem2_lab1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sem2_lab1.dir/thread.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sem2_lab1.dir/thread.c.o -MF CMakeFiles/sem2_lab1.dir/thread.c.o.d -o CMakeFiles/sem2_lab1.dir/thread.c.o -c /mnt/d/Github/MCBivis/sem2-lab1/thread.c
 
-CMakeFiles/sem2_lab1.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sem2_lab1.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/sem2-lab1/main.c > CMakeFiles/sem2_lab1.dir/main.c.i
+CMakeFiles/sem2_lab1.dir/thread.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sem2_lab1.dir/thread.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/d/Github/MCBivis/sem2-lab1/thread.c > CMakeFiles/sem2_lab1.dir/thread.c.i
 
-CMakeFiles/sem2_lab1.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sem2_lab1.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/sem2-lab1/main.c -o CMakeFiles/sem2_lab1.dir/main.c.s
+CMakeFiles/sem2_lab1.dir/thread.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sem2_lab1.dir/thread.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/d/Github/MCBivis/sem2-lab1/thread.c -o CMakeFiles/sem2_lab1.dir/thread.c.s
 
 # Object files for target sem2_lab1
 sem2_lab1_OBJECTS = \
-"CMakeFiles/sem2_lab1.dir/main.c.o"
+"CMakeFiles/sem2_lab1.dir/thread.c.o"
 
 # External object files for target sem2_lab1
 sem2_lab1_EXTERNAL_OBJECTS =
 
-sem2_lab1: CMakeFiles/sem2_lab1.dir/main.c.o
+sem2_lab1: CMakeFiles/sem2_lab1.dir/thread.c.o
 sem2_lab1: CMakeFiles/sem2_lab1.dir/build.make
 sem2_lab1: CMakeFiles/sem2_lab1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable sem2_lab1"

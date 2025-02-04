@@ -129,29 +129,29 @@ sem2_lab1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/build
 .PHONY : sem2_lab1/fast
 
-main.o: main.c.o
-.PHONY : main.o
+thread.o: thread.c.o
+.PHONY : thread.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/main.c.o
-.PHONY : main.c.o
+thread.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.o
+.PHONY : thread.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+thread.i: thread.c.i
+.PHONY : thread.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/main.c.i
-.PHONY : main.c.i
+thread.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.i
+.PHONY : thread.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+thread.s: thread.c.s
+.PHONY : thread.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/main.c.s
-.PHONY : main.c.s
+thread.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.s
+.PHONY : thread.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sem2_lab1"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... thread.o"
+	@echo "... thread.i"
+	@echo "... thread.s"
 .PHONY : help
 
 
