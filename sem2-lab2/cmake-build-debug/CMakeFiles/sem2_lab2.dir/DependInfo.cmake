@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/d/Github/MCBivis/sem2-lab1/thread.c" "CMakeFiles/sem2_lab1.dir/thread.c.o" "gcc" "CMakeFiles/sem2_lab1.dir/thread.c.o.d"
+  "/mnt/d/Github/MCBivis/sem2-lab2/thread2.c" "CMakeFiles/sem2_lab2.dir/thread2.c.o" "gcc" "CMakeFiles/sem2_lab2.dir/thread2.c.o.d"
   )
 
 # Targets to which this target links.

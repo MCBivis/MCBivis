@@ -54,16 +54,16 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/Github/MCBivis/sem2-lab1
+CMAKE_SOURCE_DIR = /mnt/d/Github/MCBivis/sem2-lab2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/sem2_lab1.dir/all
+all: CMakeFiles/sem2_lab2.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/sem2_lab1.dir/clean
+clean: CMakeFiles/sem2_lab2.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sem2_lab1.dir
+# Target rules for target CMakeFiles/sem2_lab2.dir
 
 # All Build rule for target.
-CMakeFiles/sem2_lab1.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target sem2_lab1"
-.PHONY : CMakeFiles/sem2_lab1.dir/all
+CMakeFiles/sem2_lab2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target sem2_lab2"
+.PHONY : CMakeFiles/sem2_lab2.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/sem2_lab1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sem2_lab1.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/sem2_lab1.dir/rule
+CMakeFiles/sem2_lab2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/sem2_lab2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/sem2_lab2.dir/rule
 
 # Convenience name for target.
-sem2_lab1: CMakeFiles/sem2_lab1.dir/rule
-.PHONY : sem2_lab1
+sem2_lab2: CMakeFiles/sem2_lab2.dir/rule
+.PHONY : sem2_lab2
 
 # clean rule for target.
-CMakeFiles/sem2_lab1.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/clean
-.PHONY : CMakeFiles/sem2_lab1.dir/clean
+CMakeFiles/sem2_lab2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/clean
+.PHONY : CMakeFiles/sem2_lab2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,2 +1,2 @@
-# Empty dependencies file for sem2_lab1.
+# Empty dependencies file for sem2_lab2.
 # This may be replaced when dependencies are built.

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/Github/MCBivis/sem2-lab1
+CMAKE_SOURCE_DIR = /mnt/d/Github/MCBivis/sem2-lab2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug/CMakeFiles /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named sem2_lab1
+# Target rules for targets named sem2_lab2
 
 # Build rule for target.
-sem2_lab1: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sem2_lab1
-.PHONY : sem2_lab1
+sem2_lab2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sem2_lab2
+.PHONY : sem2_lab2
 
 # fast build rule for target.
-sem2_lab1/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/build
-.PHONY : sem2_lab1/fast
+sem2_lab2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/build
+.PHONY : sem2_lab2/fast
 
-thread.o: thread.c.o
-.PHONY : thread.o
+thread2.o: thread2.c.o
+.PHONY : thread2.o
 
 # target to build an object file
-thread.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.o
-.PHONY : thread.c.o
+thread2.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/thread2.c.o
+.PHONY : thread2.c.o
 
-thread.i: thread.c.i
-.PHONY : thread.i
+thread2.i: thread2.c.i
+.PHONY : thread2.i
 
 # target to preprocess a source file
-thread.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.i
-.PHONY : thread.c.i
+thread2.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/thread2.c.i
+.PHONY : thread2.c.i
 
-thread.s: thread.c.s
-.PHONY : thread.s
+thread2.s: thread2.c.s
+.PHONY : thread2.s
 
 # target to generate assembly for a file
-thread.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab1.dir/build.make CMakeFiles/sem2_lab1.dir/thread.c.s
-.PHONY : thread.c.s
+thread2.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sem2_lab2.dir/build.make CMakeFiles/sem2_lab2.dir/thread2.c.s
+.PHONY : thread2.c.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... sem2_lab1"
-	@echo "... thread.o"
-	@echo "... thread.i"
-	@echo "... thread.s"
+	@echo "... sem2_lab2"
+	@echo "... thread2.o"
+	@echo "... thread2.i"
+	@echo "... thread2.s"
 .PHONY : help
 
 

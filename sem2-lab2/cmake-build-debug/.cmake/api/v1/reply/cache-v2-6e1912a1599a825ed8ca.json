@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug"
+			"value" : "/mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -467,7 +467,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/d/Github/MCBivis/sem2-lab1"
+			"value" : "/mnt/d/Github/MCBivis/sem2-lab2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -711,7 +711,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "sem2_lab1"
+			"value" : "sem2_lab2"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -994,7 +994,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "sem2_lab1_BINARY_DIR",
+			"name" : "sem2_lab2_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1003,10 +1003,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug"
+			"value" : "/mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug"
 		},
 		{
-			"name" : "sem2_lab1_IS_TOP_LEVEL",
+			"name" : "sem2_lab2_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1018,7 +1018,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "sem2_lab1_SOURCE_DIR",
+			"name" : "sem2_lab2_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1027,7 +1027,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/d/Github/MCBivis/sem2-lab1"
+			"value" : "/mnt/d/Github/MCBivis/sem2-lab2"
 		}
 	],
 	"kind" : "cache",

@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "sem2_lab1",
+					"name" : "sem2_lab2",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "sem2_lab1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sem2_lab1-Debug-ed11208fcf8b8dd90100.json",
-					"name" : "sem2_lab1",
+					"id" : "sem2_lab2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sem2_lab2-Debug-e0cda4c7164f1224f400.json",
+					"name" : "sem2_lab2",
 					"projectIndex" : 0
 				}
 			]
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/mnt/d/Github/MCBivis/sem2-lab1/cmake-build-debug",
-		"source" : "/mnt/d/Github/MCBivis/sem2-lab1"
+		"build" : "/mnt/d/Github/MCBivis/sem2-lab2/cmake-build-debug",
+		"source" : "/mnt/d/Github/MCBivis/sem2-lab2"
 	},
 	"version" : 
 	{

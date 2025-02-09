@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/sem2_lab2.dir/thread2.c.o -o sem2_lab2 
