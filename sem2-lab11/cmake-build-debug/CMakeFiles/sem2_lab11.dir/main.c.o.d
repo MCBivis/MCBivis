@@ -1,6 +1,7 @@
-CMakeFiles/sem2_lab1.dir/main.c.o: /mnt/d/Github/MCBivis/sem2-lab1/main.c \
- /usr/include/stdc-predef.h /usr/include/pthread.h \
- /usr/include/features.h /usr/include/features-time64.h \
+CMakeFiles/sem2_lab11.dir/main.c.o: \
+ /mnt/d/Github/MCBivis/sem2-lab11/main.c /usr/include/stdc-predef.h \
+ /usr/include/pthread.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
