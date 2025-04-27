@@ -1,0 +1,3 @@
+/mnt/d/Github/MCBivis/Sem2-lab27/cmake-build-debug/CMakeFiles/Sem2_lab27.dir
+/mnt/d/Github/MCBivis/Sem2-lab27/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/d/Github/MCBivis/Sem2-lab27/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
-project(lab8 C)
+project(Sem2_lab27 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(lab8 main.c)
+add_executable(Sem2_lab27 main.c)
