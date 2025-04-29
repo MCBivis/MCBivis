@@ -7,7 +7,6 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <sys/socket.h>
-#include <arpa/inet.h>
 
 #define MAX_CONNECTIONS 510
 #define BUFFER_SIZE 4096
@@ -22,7 +21,7 @@ typedef struct {
     int active;
 } connection_t;
 
-static connection_t conns[MAX_CONNECTIONS];
+static connection_t conns[MAX_CONNECTIONS] ={0};
 
 int create_listen_socket(int port) {
     int sockfd;
@@ -55,35 +54,30 @@ int create_listen_socket(int port) {
 }
 
 int connect_to_server(const char *host, int port) {
-    struct addrinfo hints = {0}, *res;
-    char port_str[16];
-    int sockfd;
+    struct hostent *remote_host = gethostbyname(host);
 
-    snprintf(port_str, sizeof(port_str), "%d", port);
-
-    hints.ai_family = AF_INET;
-    hints.ai_socktype = SOCK_STREAM;
-
-    if (getaddrinfo(host, port_str, &hints, &res) != 0) {
-        perror("getaddrinfo");
+    if (remote_host == NULL) {
+        herror("gethostbyname");
         return -1;
     }
 
-    sockfd = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
-    if (sockfd < 0) {
-        perror("socket(server)");
-        freeaddrinfo(res);
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd == -1) {
+        perror("socket");
         return -1;
     }
 
-    if (connect(sockfd, res->ai_addr, res->ai_addrlen) < 0) {
+    struct sockaddr_in addr = {0};
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(port);
+    addr.sin_addr = *(struct in_addr*)remote_host->h_addr_list[0];
+
+    if (connect(sockfd, (struct sockaddr *)&addr, sizeof(addr)) == -1) {
         perror("connect");
         close(sockfd);
-        freeaddrinfo(res);
         return -1;
     }
 
-    freeaddrinfo(res);
     return sockfd;
 }
 
@@ -108,7 +102,7 @@ void close_connection(connection_t *conn) {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc != 4) {
+    if (argc < 4) {
         fprintf(stderr, "Usage: %s <listen_port> <target_host> <target_port>\n", argv[0]);
         exit(1);
     }
@@ -120,22 +114,23 @@ int main(int argc, char *argv[]) {
     int listen_fd = create_listen_socket(listen_port);
     struct pollfd fds[1 + MAX_CONNECTIONS * 2];
 
-    while (1) {
-        int nfds = 0;
+    int nfds = 0;
 
-        // Add listen socket
-        fds[nfds].fd = listen_fd;
-        fds[nfds].events = POLLIN;
-        nfds++;
+    // Add listen socket
+    fds[nfds].fd = listen_fd;
+    fds[nfds].events = POLLIN;
+
+    while (1) {
+        nfds = 1;
 
         for (int i = 0; i < MAX_CONNECTIONS; i++) {
             if (conns[i].active) {
-                fds[nfds].fd = conns[i].client_fd;
-                fds[nfds].events = POLLIN | (conns[i].server_buf_len > 0 ? POLLOUT : 0);
+                fds[1 + i * 2].fd = conns[i].client_fd;
+                fds[1 + i * 2].events = POLLIN | (conns[i].server_buf_len > 0 ? POLLOUT : 0);
                 nfds++;
 
-                fds[nfds].fd = conns[i].server_fd;
-                fds[nfds].events = POLLIN | (conns[i].client_buf_len > 0 ? POLLOUT : 0);
+                fds[1 + i * 2 + 1].fd = conns[i].server_fd;
+                fds[1 + i * 2 + 1].events = POLLIN | (conns[i].client_buf_len > 0 ? POLLOUT : 0);
                 nfds++;
             }
         }
@@ -196,7 +191,7 @@ int main(int argc, char *argv[]) {
                     if (n > 0) {
                         memmove(conns[i].client_buf, conns[i].client_buf + n, conns[i].client_buf_len - n);
                         conns[i].client_buf_len -= n;
-                    } else { close_connection(&conns[i]); continue; }
+                    } else { close_connection(&conns[i]); }
                 }
             }
         }
