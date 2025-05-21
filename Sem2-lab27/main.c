@@ -21,9 +21,13 @@ typedef struct {
     int active;
 } connection_t;
 
-static connection_t conns[MAX_CONNECTIONS] ={0};
+typedef struct {
+    connection_t conns[MAX_CONNECTIONS];
+    struct pollfd fds[1 + MAX_CONNECTIONS * 2];
+    int nfds;
+} proxy_state_t;
 
-int create_listen_socket(int port) {
+int create_listen_socket(int port, proxy_state_t *state) {
     int sockfd;
     struct sockaddr_in addr = {0};
 
@@ -49,6 +53,10 @@ int create_listen_socket(int port) {
         perror("listen");
         exit(1);
     }
+
+    state->fds[0].fd = sockfd;
+    state->fds[0].events = POLLIN;
+    state->nfds++;
 
     return sockfd;
 }
@@ -81,14 +89,14 @@ int connect_to_server(const char *host, int port) {
     return sockfd;
 }
 
-int add_connection(int client_fd, int server_fd) {
+int add_connection(proxy_state_t *state, int client_fd, int server_fd) {
     for (int i = 0; i < MAX_CONNECTIONS; i++) {
-        if (!conns[i].active) {
-            conns[i].client_fd = client_fd;
-            conns[i].server_fd = server_fd;
-            conns[i].client_buf_len = 0;
-            conns[i].server_buf_len = 0;
-            conns[i].active = 1;
+        if (!state->conns[i].active) {
+            state->conns[i].client_fd = client_fd;
+            state->conns[i].server_fd = server_fd;
+            state->conns[i].client_buf_len = 0;
+            state->conns[i].server_buf_len = 0;
+            state->conns[i].active = 1;
             return 0;
         }
     }
@@ -101,6 +109,87 @@ void close_connection(connection_t *conn) {
     conn->active = 0;
 }
 
+void add_connection_fds(proxy_state_t *state, int ind) {
+    int index = state->nfds;
+    connection_t *conn = &state->conns[ind];
+
+    state->fds[index].fd = conn->client_fd;
+    state->fds[index].events = POLLIN | (conn->server_buf_len > 0 ? POLLOUT : 0);
+
+    state->fds[index + 1].fd = conn->server_fd;
+    state->fds[index + 1].events = POLLIN | (conn->client_buf_len > 0 ? POLLOUT : 0);
+
+    state->nfds += 2;
+}
+
+void handle_read_events(proxy_state_t *state, int index) {
+    connection_t *conn = &state->conns[index];
+
+    if (state->fds[1 + index * 2].revents & POLLIN) {
+        ssize_t n = read(conn->client_fd, conn->client_buf + conn->client_buf_len, BUFFER_SIZE - conn->client_buf_len);
+        if (n > 0) conn->client_buf_len += n;
+        else { close_connection(conn); return; }
+    }
+
+    if (state->fds[1 + index * 2 + 1].revents & POLLIN) {
+        ssize_t n = read(conn->server_fd, conn->server_buf + conn->server_buf_len, BUFFER_SIZE - conn->server_buf_len);
+        if (n > 0) conn->server_buf_len += n;
+        else { close_connection(conn); }
+    }
+}
+
+void handle_write_events(proxy_state_t *state, int index) {
+    connection_t *conn = &state->conns[index];
+
+    if (state->fds[1 + index * 2].revents & POLLOUT && conn->server_buf_len > 0) {
+        ssize_t n = write(conn->client_fd, conn->server_buf, conn->server_buf_len);
+        if (n > 0) {
+            memmove(conn->server_buf, conn->server_buf + n, conn->server_buf_len - n);
+            conn->server_buf_len -= n;
+        } else { close_connection(conn); return; }
+    }
+
+    if (state->fds[1 + index * 2 + 1].revents & POLLOUT && conn->client_buf_len > 0) {
+        ssize_t n = write(conn->server_fd, conn->client_buf, conn->client_buf_len);
+        if (n > 0) {
+            memmove(conn->client_buf, conn->client_buf + n, conn->client_buf_len - n);
+            conn->client_buf_len -= n;
+        } else { close_connection(conn); }
+    }
+}
+
+int pollMy(proxy_state_t *state) {
+    return poll(state->fds, state->nfds, -1);
+}
+
+void handle_new_connection(proxy_state_t *state, const char *target_host, int target_port) {
+    if (!(state->fds[0].revents & POLLIN)) {
+        return;
+    }
+
+    struct sockaddr_in client_addr;
+    socklen_t len = sizeof(client_addr);
+    int client_fd = accept(state->fds[0].fd, (struct sockaddr *)&client_addr, &len);
+    if (client_fd < 0) {
+        perror("accept");
+        return;
+    }
+
+    int server_fd = connect_to_server(target_host, target_port);
+    if (server_fd < 0) {
+        close(client_fd);
+        return;
+    }
+
+    if (add_connection(state, client_fd, server_fd) == 0) {
+        printf("New connection established!\n");
+    } else {
+        close(client_fd);
+        close(server_fd);
+    }
+}
+
+
 int main(int argc, char *argv[]) {
     if (argc < 4) {
         fprintf(stderr, "Usage: %s <listen_port> <target_host> <target_port>\n", argv[0]);
@@ -110,89 +199,33 @@ int main(int argc, char *argv[]) {
     int listen_port = atoi(argv[1]);
     const char *target_host = argv[2];
     int target_port = atoi(argv[3]);
+    proxy_state_t state = {0};
 
-    int listen_fd = create_listen_socket(listen_port);
-    struct pollfd fds[1 + MAX_CONNECTIONS * 2];
-
-    int nfds = 0;
-
-    // Add listen socket
-    fds[nfds].fd = listen_fd;
-    fds[nfds].events = POLLIN;
+    create_listen_socket(listen_port, &state);
 
     while (1) {
-        nfds = 1;
+        state.nfds = 1;
 
         for (int i = 0; i < MAX_CONNECTIONS; i++) {
-            if (conns[i].active) {
-                fds[1 + i * 2].fd = conns[i].client_fd;
-                fds[1 + i * 2].events = POLLIN | (conns[i].server_buf_len > 0 ? POLLOUT : 0);
-                nfds++;
-
-                fds[1 + i * 2 + 1].fd = conns[i].server_fd;
-                fds[1 + i * 2 + 1].events = POLLIN | (conns[i].client_buf_len > 0 ? POLLOUT : 0);
-                nfds++;
+            if (state.conns[i].active) {
+                add_connection_fds(&state, i);
             }
         }
 
-        int ready = poll(fds, nfds, -1);
+        int ready = pollMy(&state);
         if (ready < 0) {
             if (errno == EINTR) continue;
             perror("poll");
             exit(1);
         }
 
-        if (fds[0].revents & POLLIN) {
-            struct sockaddr_in client_addr;
-            socklen_t len = sizeof(client_addr);
-            int client_fd = accept(listen_fd, (struct sockaddr *)&client_addr, &len);
-            if (client_fd >= 0) {
-                int server_fd = connect_to_server(target_host, target_port);
-                if (server_fd >= 0) {
-                    if (add_connection(client_fd, server_fd) == 0) {
-                        printf("New connection established!\n");
-                    } else {
-                        close(client_fd);
-                        close(server_fd);
-                    }
-                } else {
-                    close(client_fd);
-                }
-            }
-        }
+        handle_new_connection(&state, target_host, target_port);
 
         for (int i = 0; i < MAX_CONNECTIONS; i++) {
-            if (conns[i].active) {
-                int client_fd = conns[i].client_fd;
-                int server_fd = conns[i].server_fd;
-
-                if (fds[1 + i * 2].revents & POLLIN) {
-                    ssize_t n = read(client_fd, conns[i].client_buf + conns[i].client_buf_len, BUFFER_SIZE - conns[i].client_buf_len);
-                    if (n > 0) conns[i].client_buf_len += n;
-                    else { close_connection(&conns[i]); continue; }
-                }
-
-                if (fds[1 + i * 2 + 1].revents & POLLIN) {
-                    ssize_t n = read(server_fd, conns[i].server_buf + conns[i].server_buf_len, BUFFER_SIZE - conns[i].server_buf_len);
-                    if (n > 0) conns[i].server_buf_len += n;
-                    else { close_connection(&conns[i]); continue; }
-                }
-
-                if (fds[1 + i * 2].revents & POLLOUT && conns[i].server_buf_len > 0) {
-                    ssize_t n = write(client_fd, conns[i].server_buf, conns[i].server_buf_len);
-                    if (n > 0) {
-                        memmove(conns[i].server_buf, conns[i].server_buf + n, conns[i].server_buf_len - n);
-                        conns[i].server_buf_len -= n;
-                    } else { close_connection(&conns[i]); continue; }
-                }
-
-                if (fds[1 + i * 2 + 1].revents & POLLOUT && conns[i].client_buf_len > 0) {
-                    ssize_t n = write(server_fd, conns[i].client_buf, conns[i].client_buf_len);
-                    if (n > 0) {
-                        memmove(conns[i].client_buf, conns[i].client_buf + n, conns[i].client_buf_len - n);
-                        conns[i].client_buf_len -= n;
-                    } else { close_connection(&conns[i]); }
-                }
+            if (state.conns[i].active) {
+                handle_read_events(&state, i);
+                if (!state.conns[i].active) continue;
+                handle_write_events(&state, i);
             }
         }
     }
